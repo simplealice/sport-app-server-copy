@@ -19,9 +19,9 @@ public class DemoController {
     return ResponseEntity.ok("Hello from serv");
   }
 
-  @GetMapping("/users")
-  public ResponseEntity<?> listUsers() {
-    List<User> resource = userService.getUsers();
-    return ResponseEntity.ok(resource);
-  }
+//  @GetMapping("/users")
+//  public ResponseEntity<?> listUsers() {
+//    List<User> resource = userService.getUsers();
+//    return ResponseEntity.ok(resource);
+//  }
 }
