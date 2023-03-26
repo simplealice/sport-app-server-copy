@@ -24,4 +24,8 @@ public class Event {
   private LocalDate date;
   private String title;
   private String city;
+  private String description;
+  private String type;
+  private String discipline;
+  private String image;
 }

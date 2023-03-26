@@ -20,7 +20,7 @@ public class Curriculum {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  private Integer groupNumber;
+  private String groupNumber;
   private String coach;
   private String dayOfWeek;
   private String timeFromTo;

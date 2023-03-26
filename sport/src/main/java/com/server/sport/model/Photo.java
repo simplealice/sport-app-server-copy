@@ -19,5 +19,5 @@ public class Photo {
   @Id
   @GeneratedValue
   private Integer id;
-  private byte[] image;
+  private String image;
 }

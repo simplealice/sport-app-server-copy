@@ -21,8 +21,10 @@ public class TrialClass {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  private String surname;
   private String name;
-  private Integer age;
+  private LocalDate birthday;
+  private String phone;
+  private String mail;
   private LocalDate date;
+  private String comment;
 }

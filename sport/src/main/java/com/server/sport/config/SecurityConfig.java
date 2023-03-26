@@ -25,10 +25,15 @@ public class SecurityConfig {
         csrf().
         disable().
         authorizeHttpRequests().
-        requestMatchers("/auth/**").
-        permitAll().
-        anyRequest().
-        authenticated().
+        requestMatchers("/auth/**").permitAll().
+        requestMatchers("/coaches/**").permitAll().
+        requestMatchers("/competitions/**").permitAll().
+        requestMatchers("/events/**").permitAll().
+        requestMatchers("/photos/**").permitAll().
+        requestMatchers("/news/**").permitAll().
+        requestMatchers("/trialClasses/**").permitAll().
+        requestMatchers("/curriculum/**").permitAll().
+        anyRequest().authenticated().
         and().sessionManagement().
         sessionCreationPolicy(SessionCreationPolicy.STATELESS).
         and().authenticationProvider(authenticationProvider).

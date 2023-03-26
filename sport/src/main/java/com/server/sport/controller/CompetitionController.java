@@ -4,6 +4,7 @@ import com.server.sport.model.Competition;
 import com.server.sport.service.CompetitionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class CompetitionController {
     return "Добавлены новые соревнования";
   }
 
-  @PostMapping("/getAll")
+  @GetMapping("/getAll")
   public List<Competition> getAllCompetitions() {
     return competitionService.getAllCompetitions();
   }

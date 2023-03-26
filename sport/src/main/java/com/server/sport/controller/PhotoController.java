@@ -5,6 +5,7 @@ import com.server.sport.model.Photo;
 import com.server.sport.service.PhotoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class PhotoController {
     return "Добавлено новое фото";
   }
 
-  @PostMapping("/getAll")
+  @GetMapping("/getAll")
   public List<Photo> getAllPhotos() {
     return photoService.getAllPhotos();
   }

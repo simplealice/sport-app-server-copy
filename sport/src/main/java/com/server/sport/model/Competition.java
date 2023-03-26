@@ -26,5 +26,5 @@ public class Competition {
   private String discipline;
   private String city;
   private String description;
-  private byte[] image;
+  private String image;
 }

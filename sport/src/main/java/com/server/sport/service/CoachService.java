@@ -6,4 +6,5 @@ import java.util.List;
 public interface CoachService {
   public Coach saveCoach(Coach coach);
   public List<Coach> getAllCoaches();
+  Coach editCoach(Long coachId, String newName, String newSurname, String newPosition, String newDescription, String newPhoto);
 }
