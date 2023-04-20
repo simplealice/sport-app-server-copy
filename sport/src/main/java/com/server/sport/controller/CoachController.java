@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -32,8 +33,14 @@ public class CoachController {
     return coachService.getAllCoaches();
   }
 
+  @GetMapping(value = "/delete/{id}")
+  public String delete(@PathVariable("id") Integer id) {
+    coachService.deleteById(id);
+    return "Удален тренер " + id;
+  }
+
   @PutMapping("edit/{coachId}")
-  public ResponseEntity<Coach> editCoach(@PathVariable Long coachId,
+  public ResponseEntity<Coach> editCoach(@PathVariable Integer coachId,
       @RequestBody EditCoachRequest editCoachRequest) {
     Coach editedUser = coachService.editCoach(coachId,
         editCoachRequest.getNewName(),
@@ -43,4 +50,5 @@ public class CoachController {
         editCoachRequest.getNewPhoto());
     return new ResponseEntity<>(editedUser, HttpStatus.OK);
   }
+
 }

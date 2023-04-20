@@ -22,10 +22,11 @@ public class CoachServiceImpl implements CoachService {
     return coachRepository.findAll();
   }
 
-  public Coach editCoach(Long userId, String newName, String newSurname,
+  @Override
+  public Coach editCoach(Integer userId, String newName, String newSurname,
       String newPosition, String newDescription, String newPhoto) {
-    Coach coach = coachRepository.findById(userId);
-    
+    Coach coach = coachRepository.getReferenceById(userId);
+
     if (newName != null) {
       coach.setName(newName);
     }
@@ -41,7 +42,11 @@ public class CoachServiceImpl implements CoachService {
     if (newPhoto != null) {
       coach.setImage(newPhoto);
     }
-
     return coachRepository.save(coach);
+  }
+
+  @Override
+  public void deleteById(Integer id) {
+    coachRepository.deleteById(id);
   }
 }

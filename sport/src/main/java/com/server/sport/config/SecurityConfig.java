@@ -33,6 +33,7 @@ public class SecurityConfig {
         requestMatchers("/news/**").permitAll().
         requestMatchers("/trialClasses/**").permitAll().
         requestMatchers("/curriculum/**").permitAll().
+        requestMatchers("/eventSignIn/**").permitAll().
         anyRequest().authenticated().
         and().sessionManagement().
         sessionCreationPolicy(SessionCreationPolicy.STATELESS).

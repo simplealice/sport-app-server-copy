@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CoachRepository extends JpaRepository<Coach, Integer> {
-  Coach findById(Long userId);
+
 }

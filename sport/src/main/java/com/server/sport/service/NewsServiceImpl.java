@@ -1,7 +1,9 @@
 package com.server.sport.service;
 
+import com.server.sport.model.Event;
 import com.server.sport.model.News;
 import com.server.sport.repository.NewsRepository;
+import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,5 +20,29 @@ public class NewsServiceImpl implements NewsService {
   @Override
   public List<News> getAllNews() {
     return newsRepository.findAll();
+  }
+
+  @Override
+  public News editNews(Integer id, String newTitle, LocalDate newDate, String newDescription,
+      String newImage) {
+    News news = newsRepository.getReferenceById(id);
+    if (newTitle != null) {
+      news.setTitle(newTitle);
+    }
+    if (newDate != null) {
+      news.setDate(newDate);
+    }
+    if (newDescription != null) {
+      news.setDescription(newDescription);
+    }
+    if (newImage != null) {
+      news.setImage(newImage);
+    }
+    return newsRepository.save(news);
+  }
+
+  @Override
+  public void deleteById(Integer id) {
+    newsRepository.deleteById(id);
   }
 }
