@@ -1,8 +1,6 @@
 package com.server.sport.controller;
 
-import com.server.sport.model.Competition;
 import com.server.sport.model.Event;
-import com.server.sport.request.EditCompetitionRequest;
 import com.server.sport.request.EditEventRequest;
 import com.server.sport.service.EventService;
 import java.util.List;

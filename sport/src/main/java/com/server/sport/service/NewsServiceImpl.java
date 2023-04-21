@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Event;
 import com.server.sport.model.News;
 import com.server.sport.repository.NewsRepository;
 import java.time.LocalDate;

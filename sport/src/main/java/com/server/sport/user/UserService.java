@@ -1,7 +1,6 @@
 package com.server.sport.user;
 
 import java.util.List;
-import java.util.Optional;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +22,4 @@ public class UserService {
         () -> new UsernameNotFoundException("User not found")
     );
   }
-
-//  public Optional<User> getUser(String email) {
-//    return userRepository.findByEmail(email);
-//  }
 }

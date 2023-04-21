@@ -1,6 +1,5 @@
 package com.server.sport.config;
 
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,6 +33,7 @@ public class SecurityConfig {
         requestMatchers("/trialClasses/**").permitAll().
         requestMatchers("/curriculum/**").permitAll().
         requestMatchers("/eventSignIn/**").permitAll().
+        requestMatchers("/feedback/**").permitAll().
         anyRequest().authenticated().
         and().sessionManagement().
         sessionCreationPolicy(SessionCreationPolicy.STATELESS).

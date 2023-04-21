@@ -4,6 +4,6 @@ import com.server.sport.model.TrialClass;
 import java.util.List;
 
 public interface TrialClassService {
-  public TrialClass saveTrialClass(TrialClass trialClass);
-  public List<TrialClass> getAllTrialClasses();
+  TrialClass saveTrialClass(TrialClass trialClass);
+  List<TrialClass> getAllTrialClasses();
 }

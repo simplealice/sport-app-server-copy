@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Competition;
 import com.server.sport.model.Curriculum;
 import com.server.sport.repository.CurriculumRepository;
 import java.util.List;

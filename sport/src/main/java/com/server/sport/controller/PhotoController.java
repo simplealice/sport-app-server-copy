@@ -1,9 +1,6 @@
 package com.server.sport.controller;
 
-import com.server.sport.model.Event;
-import com.server.sport.model.News;
 import com.server.sport.model.Photo;
-import com.server.sport.request.EditNewsRequest;
 import com.server.sport.request.EditPhotoRequest;
 import com.server.sport.service.PhotoService;
 import java.util.List;

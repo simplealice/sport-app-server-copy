@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Event;
 import com.server.sport.model.Photo;
 import com.server.sport.repository.PhotoRepository;
 import java.util.List;
