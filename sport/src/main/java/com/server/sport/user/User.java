@@ -35,6 +35,10 @@ public class User implements UserDetails {
   private String name;
   private LocalDate birthDate;
   private String category;
+  private String kuDan;
+  private String major;
+  private String team;
+  private String medals;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

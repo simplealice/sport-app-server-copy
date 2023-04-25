@@ -19,7 +19,7 @@ public class AuthenticationService {
   private final AuthenticationManager authenticationManager;
   private final PasswordEncoder passwordEncoder;
 
-  public AuthenticationResponse register(RegisterRequest request) {
+  public AuthenticationResponse register(RegisterRequest request, Role role) {
     var user = User.builder().
         email(request.getEmail()).
         password(passwordEncoder.encode(request.getPassword())).
@@ -27,7 +27,11 @@ public class AuthenticationService {
         name(request.getName()).
         birthDate(request.getBirthDate()).
         category(request.getCategory()).
-        role(Role.SPORTSMEN)
+        role(role).
+        kuDan("").
+        major("").
+        team("").
+        medals("")
         .build();
     repository.save(user);
     var jwtToken = jwtService.generateToken(user);

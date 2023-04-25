@@ -1,5 +1,6 @@
 package com.server.sport.auth;
 
+import com.server.sport.user.Role;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,9 +23,9 @@ public class AuthenticationController {
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
-      @RequestBody RegisterRequest request
+      @RequestBody RegisterRequest request, @RequestParam Role role
   ) {
-    return ResponseEntity.ok(service.register(request));
+    return ResponseEntity.ok(service.register(request, role));
   }
   @PostMapping("/authenticate")
   public ResponseEntity<AuthenticationResponse> auth(@RequestBody AuthenticationRequest request) {
