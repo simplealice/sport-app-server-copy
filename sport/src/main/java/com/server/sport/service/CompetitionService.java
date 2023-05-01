@@ -9,4 +9,5 @@ public interface CompetitionService {
   List<Competition> getAllCompetitions();
   Competition editCompetition(Integer id, String newTitle, LocalDate newDate, String newDiscipline, String newCity, String newDescription, String newImage);
   void deleteById(Integer id);
+  Competition getCompetition(Integer id);
 }

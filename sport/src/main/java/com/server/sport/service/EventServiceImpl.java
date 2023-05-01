@@ -5,6 +5,7 @@ import com.server.sport.repository.EventRepository;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +22,12 @@ public class EventServiceImpl implements EventService {
   @Override
   public List<Event> getAllEvents() {
     return eventRepository.findAll();
+  }
+
+  public Event getEvent(Integer id) {
+    return eventRepository.findById(id).orElseThrow(
+        () -> new UsernameNotFoundException("Event not found")
+    );
   }
 
   @Override

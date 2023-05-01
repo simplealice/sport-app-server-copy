@@ -1,9 +1,11 @@
 package com.server.sport.service;
 
+import com.server.sport.model.Coach;
 import com.server.sport.model.Photo;
 import com.server.sport.repository.PhotoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,6 +22,12 @@ public class PhotoServiceImpl implements PhotoService {
   @Override
   public List<Photo> getAllPhotos() {
     return photoRepository.findAll();
+  }
+
+  public Photo getPhoto(Integer id) {
+    return photoRepository.findById(id).orElseThrow(
+        () -> new UsernameNotFoundException("Photo not found")
+    );
   }
 
   @Override

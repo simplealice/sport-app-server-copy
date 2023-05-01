@@ -1,10 +1,12 @@
 package com.server.sport.service;
 
+import com.server.sport.model.Coach;
 import com.server.sport.model.News;
 import com.server.sport.repository.NewsRepository;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,6 +21,12 @@ public class NewsServiceImpl implements NewsService {
   @Override
   public List<News> getAllNews() {
     return newsRepository.findAll();
+  }
+
+  public News getNews(Integer id) {
+    return newsRepository.findById(id).orElseThrow(
+        () -> new UsernameNotFoundException("News not found")
+    );
   }
 
   @Override

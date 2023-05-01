@@ -4,6 +4,7 @@ import com.server.sport.model.Curriculum;
 import com.server.sport.repository.CurriculumRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,6 +21,12 @@ public class CurriculumServiceImpl implements CurriculumService {
   @Override
   public List<Curriculum> getCurriculum() {
     return curriculumRepository.findAll();
+  }
+
+  public Curriculum getCurriculum(Integer id) {
+    return curriculumRepository.findById(id).orElseThrow(
+        () -> new UsernameNotFoundException("Curriculum not found")
+    );
   }
 
   @Override

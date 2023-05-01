@@ -7,4 +7,5 @@ import org.springframework.http.ResponseEntity;
 public interface EventSignInService {
   ResponseEntity<EventSignIn> saveEventSignIn(EventSignIn eventSignIn);
   List<EventSignIn> getAllEventsSignIn();
+  EventSignIn getEventSignIn(Integer id);
 }

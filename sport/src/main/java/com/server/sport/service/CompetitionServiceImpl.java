@@ -5,6 +5,7 @@ import com.server.sport.repository.CompetitionRepository;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +22,12 @@ public class CompetitionServiceImpl implements CompetitionService {
   @Override
   public List<Competition> getAllCompetitions() {
     return competitionRepository.findAll();
+  }
+
+  public Competition getCompetition(Integer id) {
+    return competitionRepository.findById(id).orElseThrow(
+        () -> new UsernameNotFoundException("Competition not found")
+    );
   }
 
   @Override

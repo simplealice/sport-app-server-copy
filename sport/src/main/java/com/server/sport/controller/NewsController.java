@@ -33,6 +33,11 @@ public class NewsController {
       return newsService.getAllNews();
     }
 
+  @PostMapping(value = "/get/{id}")
+  public News getNews(@PathVariable("id") Integer id) {
+    return newsService.getNews(id);
+  }
+
   @GetMapping(value = "/delete/{id}")
   public String delete(@PathVariable("id") Integer id) {
     newsService.deleteById(id);

@@ -4,6 +4,7 @@ import com.server.sport.model.Coach;
 import com.server.sport.repository.CoachRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,6 +21,12 @@ public class CoachServiceImpl implements CoachService {
   @Override
   public List<Coach> getAllCoaches() {
     return coachRepository.findAll();
+  }
+
+  public Coach getCoach(Integer id) {
+    return coachRepository.findById(id).orElseThrow(
+        () -> new UsernameNotFoundException("Coach not found")
+    );
   }
 
   @Override

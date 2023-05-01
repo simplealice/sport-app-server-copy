@@ -7,6 +7,7 @@ import java.util.List;
 public interface NewsService {
   News saveNews(News news);
   List<News> getAllNews();
+  News getNews(Integer id);
   News editNews(Integer id, String newTitle, LocalDate newDate, String newDescription, String newImage);
   void deleteById(Integer id);
 }

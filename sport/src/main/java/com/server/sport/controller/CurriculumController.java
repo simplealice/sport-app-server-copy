@@ -1,5 +1,6 @@
 package com.server.sport.controller;
 
+import com.server.sport.model.Coach;
 import com.server.sport.model.Curriculum;
 import com.server.sport.request.EditCurriculumRequest;
 import com.server.sport.service.CurriculumService;
@@ -31,6 +32,11 @@ public class CurriculumController {
   @GetMapping("/get")
   public List<Curriculum> getCurriculum() {
     return curriculumService.getCurriculum();
+  }
+
+  @PostMapping(value = "/get/{id}")
+  public Curriculum getCurriculum(@PathVariable("id") Integer id) {
+    return curriculumService.getCurriculum(id);
   }
 
   @GetMapping(value = "/delete/{id}")

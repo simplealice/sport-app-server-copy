@@ -1,5 +1,6 @@
 package com.server.sport.controller;
 
+import com.server.sport.model.Coach;
 import com.server.sport.model.Competition;
 import com.server.sport.request.EditCompetitionRequest;
 import com.server.sport.service.CompetitionService;
@@ -31,6 +32,11 @@ public class CompetitionController {
   @GetMapping("/getAll")
   public List<Competition> getAllCompetitions() {
     return competitionService.getAllCompetitions();
+  }
+
+  @PostMapping(value = "/get/{id}")
+  public Competition getCompetition(@PathVariable("id") Integer id) {
+    return competitionService.getCompetition(id);
   }
 
   @GetMapping(value = "/delete/{id}")

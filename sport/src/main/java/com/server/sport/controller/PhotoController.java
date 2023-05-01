@@ -1,5 +1,6 @@
 package com.server.sport.controller;
 
+import com.server.sport.model.Coach;
 import com.server.sport.model.Photo;
 import com.server.sport.request.EditPhotoRequest;
 import com.server.sport.service.PhotoService;
@@ -31,6 +32,11 @@ public class PhotoController {
   @GetMapping("/getAll")
   public List<Photo> getAllPhotos() {
     return photoService.getAllPhotos();
+  }
+
+  @PostMapping(value = "/get/{id}")
+  public Photo getPhoto(@PathVariable("id") Integer id) {
+    return photoService.getPhoto(id);
   }
 
   @GetMapping(value = "/delete/{id}")

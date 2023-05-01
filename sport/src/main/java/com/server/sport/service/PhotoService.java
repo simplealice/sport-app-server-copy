@@ -6,6 +6,7 @@ import java.util.List;
 public interface PhotoService {
   Photo savePhoto(Photo photo);
   List<Photo> getAllPhotos();
+  Photo getPhoto(Integer id);
   Photo editPhoto(Integer id, String newImage);
   void deleteById(Integer id);
 }

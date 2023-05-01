@@ -1,5 +1,6 @@
 package com.server.sport.controller;
 
+import com.server.sport.model.Coach;
 import com.server.sport.model.Event;
 import com.server.sport.request.EditEventRequest;
 import com.server.sport.service.EventService;
@@ -30,6 +31,11 @@ public class EventController {
   @GetMapping("/getAll")
   public List<Event> getAllEvents() {
     return eventService.getAllEvents();
+  }
+
+  @PostMapping(value = "/get/{id}")
+  public Event getEvent(@PathVariable("id") Integer id) {
+    return eventService.getEvent(id);
   }
 
   @GetMapping(value = "/delete/{id}")

@@ -1,6 +1,7 @@
 package com.server.sport.controller;
 
 import com.server.sport.model.Coach;
+import com.server.sport.model.UserResponse;
 import com.server.sport.request.EditCoachRequest;
 import com.server.sport.service.CoachService;
 import java.util.List;
@@ -48,6 +49,11 @@ public class CoachController {
         editCoachRequest.getNewDescription(),
         editCoachRequest.getNewPhoto());
     return new ResponseEntity<>(editedUser, HttpStatus.OK);
+  }
+
+  @PostMapping(value = "/get/{id}")
+  public Coach getCoach(@PathVariable("id") Integer id) {
+    return coachService.getCoach(id);
   }
 
 }
