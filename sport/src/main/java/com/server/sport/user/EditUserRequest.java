@@ -15,4 +15,6 @@ public class EditUserRequest {
   private String newMajor;
   private String newTeam;
   private String newMedals;
+  private String newGroupSc;
+  private Integer newScores;
 }

@@ -23,4 +23,6 @@ public class UserResponse {
   private String major;
   private String team;
   private String medals;
+  private String groupSc;
+  private Integer scores;
 }

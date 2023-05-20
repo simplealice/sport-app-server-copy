@@ -48,7 +48,9 @@ public class UserController {
         editUserRequest.getNewKuDan(),
         editUserRequest.getNewMajor(),
         editUserRequest.getNewTeam(),
-        editUserRequest.getNewMedals());
+        editUserRequest.getNewMedals(),
+        editUserRequest.getNewGroupSc(),
+        editUserRequest.getNewScores());
     return new ResponseEntity<>(editedUser, HttpStatus.OK);
   }
 //  @GetMapping(value = "/delete/{id}")

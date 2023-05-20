@@ -39,6 +39,8 @@ public class User implements UserDetails {
   private String major;
   private String team;
   private String medals;
+  private String groupSc;
+  private Integer scores;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

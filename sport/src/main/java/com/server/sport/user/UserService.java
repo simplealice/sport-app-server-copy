@@ -27,11 +27,13 @@ public class UserService {
 
     return new UserResponse(userFromDB.getId(), userFromDB.getRole().name(), userFromDB.getEmail(),
         userFromDB.getSurname(), userFromDB.getName(), userFromDB.getBirthDate(), userFromDB.getCategory(),
-        userFromDB.getKuDan(), userFromDB.getMajor(), userFromDB.getTeam(), userFromDB.getMedals());
+        userFromDB.getKuDan(), userFromDB.getMajor(), userFromDB.getTeam(), userFromDB.getMedals(),
+        userFromDB.getGroupSc(), userFromDB.getScores());
   }
 
   public User editUser(Integer id, String newSurname, String newName, LocalDate newBirthDate,
-      String newCategory, String newKuDan, String newMajor, String newTeam, String newMedals) {
+      String newCategory, String newKuDan, String newMajor, String newTeam, String newMedals,
+      String newGroupSc, Integer newScores) {
     User user = userRepository.getReferenceById(id);
     if (newSurname != null) {
       user.setSurname(newSurname);
@@ -56,6 +58,12 @@ public class UserService {
     }
     if (newMedals != null) {
       user.setMedals(newMedals);
+    }
+    if (newGroupSc != null) {
+      user.setGroupSc(newGroupSc);
+    }
+    if (newScores != null) {
+      user.setScores(newScores);
     }
     return userRepository.save(user);
   }

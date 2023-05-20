@@ -31,7 +31,9 @@ public class AuthenticationService {
         kuDan("").
         major("").
         team("").
-        medals("")
+        medals("").
+        groupSc("").
+        scores(0)
         .build();
     repository.save(user);
     var jwtToken = jwtService.generateToken(user);

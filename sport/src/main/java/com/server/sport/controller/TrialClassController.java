@@ -1,6 +1,5 @@
 package com.server.sport.controller;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.TrialClass;
 import com.server.sport.service.TrialClassService;
 import java.util.List;
