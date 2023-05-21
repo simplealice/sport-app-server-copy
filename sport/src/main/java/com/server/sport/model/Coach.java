@@ -1,5 +1,6 @@
 package com.server.sport.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,4 +25,9 @@ public class Coach {
   private String position;
   private String description;
   private String image;
+
+  @Column(length = 60000)
+  private byte[] filebyte;
+  @Column(length = 20000)
+  private String filebase64;
 }
