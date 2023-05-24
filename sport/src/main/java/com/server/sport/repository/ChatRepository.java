@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChatRepository extends JpaRepository<Chat, Integer> {
-  List<Chat> findByChatId(Integer chatId);
-
-  List<Chat> findBySenderIdOrRecipientIdOrderByTimestampDesc(Integer userId1, Integer userId2);
+  List<Chat> findByUser1AndUser2OrderByCreatedDateDesc(Integer user1, Integer user2);
+  List<Chat> findByUser1OrUser2OrderByCreatedDateDesc(Integer user1, Integer user2);
 }

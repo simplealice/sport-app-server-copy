@@ -16,12 +16,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "chat")
-public class Chat {
+@Table(name = "messages")
+public class Message {
   @Id
   @GeneratedValue
   private Integer id;
-  private Integer user1;
-  private Integer user2;
-  private LocalDateTime createdDate;
+  private Integer chatId;
+  private Integer senderId;
+  private Integer recipientId;
+  private LocalDateTime timestamp;
+  private String message;
+
 }
