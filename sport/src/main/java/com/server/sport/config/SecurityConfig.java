@@ -35,6 +35,8 @@ public class SecurityConfig {
         requestMatchers("/eventSignIn/**").permitAll().
         requestMatchers("/feedback/**").permitAll().
         requestMatchers("/awards/**").permitAll().
+        requestMatchers("/users/**").permitAll().
+        requestMatchers("/club/**").permitAll().
         anyRequest().authenticated().
         and().sessionManagement().
         sessionCreationPolicy(SessionCreationPolicy.STATELESS).

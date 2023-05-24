@@ -25,6 +25,6 @@ public class ChatServiceImpl implements ChatService {
   @Override
   public List<Chat> getChatsForUser(Integer userId) {
     // Code to retrieve chats for a user from the database
-    return chatRepository.findBySenderOrRecipientOrderByTimestampDesc(userId, userId);
+    return chatRepository.findBySenderIdOrRecipientIdOrderByTimestampDesc(userId, userId);
   }
 }
