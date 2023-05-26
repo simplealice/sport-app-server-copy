@@ -33,4 +33,10 @@ public class TrialClassController {
   public TrialClass getTrialClass(@PathVariable("id") Integer id) {
     return trialClassService.getTrialClass(id);
   }
+
+  @GetMapping(value = "/delete/{id}")
+  public String delete(@PathVariable("id") Integer id) {
+    trialClassService.deleteById(id);
+    return "Удалена запись " + id;
+  }
 }

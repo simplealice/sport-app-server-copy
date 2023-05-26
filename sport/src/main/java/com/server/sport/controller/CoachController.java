@@ -1,7 +1,6 @@
 package com.server.sport.controller;
 
 import com.server.sport.model.Coach;
-import com.server.sport.model.UserResponse;
 import com.server.sport.request.EditCoachRequest;
 import com.server.sport.service.CoachService;
 import java.util.List;

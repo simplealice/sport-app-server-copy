@@ -24,6 +24,7 @@ public class CompetitionServiceImpl implements CompetitionService {
     return competitionRepository.findAll();
   }
 
+  @Override
   public Competition getCompetition(Integer id) {
     return competitionRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Competition not found")

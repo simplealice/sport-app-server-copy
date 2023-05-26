@@ -1,8 +1,6 @@
 package com.server.sport.user;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.UserResponse;
-import com.server.sport.request.EditCoachRequest;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,12 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
   @Autowired
   private UserService userService;
-
-//  @PostMapping("/add")
-//  public String add(@RequestBody Coach coach) {
-//    userService.saveCoach(coach);
-//    return "Добавлен новый тренер";
-//  }
 
   @GetMapping("/getAll")
   public List<User> getAllUsers() {
@@ -53,9 +45,10 @@ public class UserController {
         editUserRequest.getNewScores());
     return new ResponseEntity<>(editedUser, HttpStatus.OK);
   }
-//  @GetMapping(value = "/delete/{id}")
-//  public String delete(@PathVariable("id") long id) {
-//    userService.deleteById(id);
-//    return "Удален тренер " + id;
-//  }
+
+  @GetMapping(value = "/delete/{id}")
+  public String delete(@PathVariable("id") Integer id) {
+    userService.deleteById(id);
+    return "Удален пользователь " + id;
+  }
 }

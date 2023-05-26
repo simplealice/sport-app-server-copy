@@ -1,6 +1,5 @@
 package com.server.sport.controller;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.Curriculum;
 import com.server.sport.request.EditCurriculumRequest;
 import com.server.sport.service.CurriculumService;

@@ -30,6 +30,7 @@ public class CoachServiceImpl implements CoachService {
     return coachRepository.findAll();
   }
 
+  @Override
   public Coach getCoach(Integer id) {
     return coachRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Coach not found")

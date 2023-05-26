@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.Feedback;
 import com.server.sport.repository.FeedbackRepository;
 import java.util.List;
@@ -24,6 +23,7 @@ public class FeedbackServiceImpl implements FeedbackService {
     return feedbackRepository.findAll();
   }
 
+  @Override
   public Feedback getFeedback(Integer id) {
     return feedbackRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Feedback not found")

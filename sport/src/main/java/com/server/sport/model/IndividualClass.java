@@ -25,6 +25,6 @@ public class IndividualClass {
   private LocalDate birthday;
   private String phone;
   private String mail;
-  private LocalDate date;
+  private String date;
   private String comment;
 }

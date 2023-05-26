@@ -23,6 +23,7 @@ public class CurriculumServiceImpl implements CurriculumService {
     return curriculumRepository.findAll();
   }
 
+  @Override
   public Curriculum getCurriculum(Integer id) {
     return curriculumRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Curriculum not found")

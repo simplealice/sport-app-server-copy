@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Chat;
 import com.server.sport.model.Message;
 import java.util.List;
 

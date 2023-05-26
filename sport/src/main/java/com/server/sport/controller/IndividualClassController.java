@@ -32,4 +32,10 @@ public class IndividualClassController {
   public IndividualClass getIndividualClass(@PathVariable("id") Integer id) {
     return individualClassService.getIndividualClass(id);
   }
+
+  @GetMapping(value = "/delete/{id}")
+  public String delete(@PathVariable("id") Integer id) {
+    individualClassService.deleteById(id);
+    return "Удалена запись " + id;
+  }
 }

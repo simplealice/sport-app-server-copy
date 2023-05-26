@@ -23,9 +23,15 @@ public class TrialClassServiceImpl implements TrialClassService {
     return trialClassRepository.findAll();
   }
 
+  @Override
   public TrialClass getTrialClass(Integer id) {
     return trialClassRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Trial class not found")
     );
+  }
+
+  @Override
+  public void deleteById(Integer id) {
+    trialClassRepository.deleteById(id);
   }
 }

@@ -37,6 +37,7 @@ public class SecurityConfig {
         requestMatchers("/awards/**").permitAll().
         requestMatchers("/users/**").permitAll().
         requestMatchers("/club/**").permitAll().
+        requestMatchers("/timeSignIn/**").permitAll().
         anyRequest().authenticated().
         and().sessionManagement().
         sessionCreationPolicy(SessionCreationPolicy.STATELESS).

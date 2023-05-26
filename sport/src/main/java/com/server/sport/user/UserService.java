@@ -1,6 +1,5 @@
 package com.server.sport.user;
 
-import com.server.sport.model.News;
 import com.server.sport.model.UserResponse;
 import java.time.LocalDate;
 import java.util.List;
@@ -66,5 +65,9 @@ public class UserService {
       user.setScores(newScores);
     }
     return userRepository.save(user);
+  }
+
+  public void deleteById(Integer id) {
+    userRepository.deleteById(id);
   }
 }

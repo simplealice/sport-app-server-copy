@@ -7,4 +7,5 @@ public interface TrialClassService {
   TrialClass saveTrialClass(TrialClass trialClass);
   List<TrialClass> getAllTrialClasses();
   TrialClass getTrialClass(Integer id);
+  void deleteById(Integer id);
 }

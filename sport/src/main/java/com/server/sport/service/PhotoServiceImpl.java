@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.Photo;
 import com.server.sport.repository.PhotoRepository;
 import java.util.List;
@@ -24,6 +23,7 @@ public class PhotoServiceImpl implements PhotoService {
     return photoRepository.findAll();
   }
 
+  @Override
   public Photo getPhoto(Integer id) {
     return photoRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Photo not found")

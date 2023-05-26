@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.News;
 import com.server.sport.repository.NewsRepository;
 import java.time.LocalDate;
@@ -23,6 +22,7 @@ public class NewsServiceImpl implements NewsService {
     return newsRepository.findAll();
   }
 
+  @Override
   public News getNews(Integer id) {
     return newsRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("News not found")

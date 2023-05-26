@@ -7,4 +7,5 @@ public interface IndividualClassService {
   IndividualClass saveIndividualClass(IndividualClass individualClass);
   List<IndividualClass> getAllIndividualClasses();
   IndividualClass getIndividualClass(Integer id);
+  void deleteById(Integer id);
 }

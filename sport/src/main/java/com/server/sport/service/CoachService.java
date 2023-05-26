@@ -10,6 +10,5 @@ public interface CoachService {
   Coach editCoach(Integer coachId, String newName, String newSurname, String newPosition, String newDescription, String newPhoto);
   void deleteById(Integer id);
   Coach getCoach(Integer id);
-
   Coach addCoachImage(Integer coachId, MultipartFile data);
 }

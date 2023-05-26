@@ -1,7 +1,6 @@
 package com.server.sport.service;
 
 import com.server.sport.model.Awards;
-import com.server.sport.model.Coach;
 import java.util.List;
 
 public interface AwardsService {

@@ -29,4 +29,9 @@ public class IndividualClassServiceImpl implements IndividualClassService {
         () -> new UsernameNotFoundException("Individual class not found")
     );
   }
+
+  @Override
+  public void deleteById(Integer id) {
+    individualClassRepository.deleteById(id);
+  }
 }

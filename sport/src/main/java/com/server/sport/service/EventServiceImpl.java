@@ -24,6 +24,7 @@ public class EventServiceImpl implements EventService {
     return eventRepository.findAll();
   }
 
+  @Override
   public Event getEvent(Integer id) {
     return eventRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("Event not found")

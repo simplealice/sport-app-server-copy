@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.config.FileStorageUtil;
 import com.server.sport.model.Chat;
 import com.server.sport.repository.ChatRepository;
 import java.time.LocalDateTime;
@@ -19,7 +18,6 @@ public class ChatServiceImpl implements ChatService {
 
   @Override
   public Chat createChat(Chat chat) {
-//    Chat chat = new Chat(user1, user2, LocalDateTime.now());
     List<Chat> existingChats = chatRepository.findByUser1AndUser2OrderByCreatedDateDesc(
         chat.getUser1(), chat.getUser2());
     existingChats.addAll(chatRepository.findByUser1AndUser2OrderByCreatedDateDesc(

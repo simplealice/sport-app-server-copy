@@ -1,6 +1,5 @@
 package com.server.sport.service;
 
-import com.server.sport.model.Coach;
 import com.server.sport.model.EventSignIn;
 import com.server.sport.repository.EventSignInRepository;
 import java.util.List;
@@ -28,6 +27,7 @@ public class EventSignInServiceImpl implements EventSignInService {
     return eventSignInRepository.findAll();
   }
 
+  @Override
   public EventSignIn getEventSignIn(Integer id) {
     return eventSignInRepository.findById(id).orElseThrow(
         () -> new UsernameNotFoundException("EventSignIn not found")
