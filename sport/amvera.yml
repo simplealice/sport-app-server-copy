@@ -1,0 +1,12 @@
+meta:
+  environment: jvm
+  toolchain:
+    name: maven
+    version: 17
+
+build:
+  args: spring-boot:repackage -Pproduction
+
+run:
+  jarName: sport-0.0.1-SNAPSHOT.jar
+  containerPort: 8080
